@@ -23,6 +23,15 @@ const checkAuthorization = (req, res, next) => {
 
 
 /* GET home page. */
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+
+
+
+/* GET home page. */
 router.get('/createPayment', function (req, res, next) {
 
   var { cmd, amount, currency1, currency2, buyer_email } = req.body
@@ -343,7 +352,7 @@ router.get('/updateCoinData', checkAuthorization, (req, res) => {
   .catch(function (error) {
     console.log(error);
   });
-  }, 10000);
+  }, 60000);
   
 
 });
